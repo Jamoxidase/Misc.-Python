@@ -1,8 +1,11 @@
 # Misc.-Python
 
-Positional Burrows-Wheeler Transform (PBWT)
+Positional Burrows-Wheeler Transform (PBWT) - "Efficient haplotype matching and storage using the Positional Burrows-Wheeler Transform (PBWT)", Richard Durbin Bioinformatics 30:1266-72 (2014).
 
 PBWT employs a sorted suffix array run-length compression approach that enables efficient and scalable identification of maximal matches given a haplotype set of M sequences with N bi-allelic variable sites in O(NM) time compared to O(NM^2) expected from naive pairwise comparison.
+
+More precisely, PBWT supports a run-length compressed representation of aligned haplotype data, on which efficient matching algorithms can be built. Typically PBWT compression is much better than generic compression, particularly for large numbers of haplotypes, and search algorithms are linear in the query size independent of reference size.
+
 
 Algorithm 1 - constructReversePrefixSortMatrix()
 
