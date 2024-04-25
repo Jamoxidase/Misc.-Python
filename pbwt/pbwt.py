@@ -193,51 +193,53 @@ def getLongMatches(X, minLength):
 
 
 # Example usage
-X = np.array([
-    "101010101010101010",
-    "010101010101010101",
-    "110011001100110011",
-    "001100110011001100",
-    "111100001111000011",
-    "000011110000111100",
-    "111111111111111111",
-    "000000000000000000",
-    "101101011010110101",
-    "010010100101001010",
-    "110000001111111100",
-    "001111110000000011",
-    "100011110000111100",
-    "011100001111000011",
-    "101111111110000000",
-    "010000000001111111"
-])
-X = np.array(['010101', '110001', '111111', '011110', '000000', '100010', '110001', '010110'])
-print('X')
-print(X)
+def main():
+    # Example data
+    X = np.array([
+        "101010101010101010",
+        "010101010101010101",
+        "110011001100110011",
+        "001100110011001100",
+        "111100001111000011",
+        "000011110000111100",
+        "111111111111111111",
+        "000000000000000000",
+        "101101011010110101",
+        "010010100101001010",
+        "110000001111111100",
+        "001111110000000011",
+        "100011110000111100",
+        "011100001111000011",
+        "101111111110000000",
+        "010000000001111111"
+    ])
 
-# Construct reverse prefix sort matrix
-A = constructReversePrefixSortMatrix(X)
-print("Reverse Prefix Sort Matrix (A):")
-print(A)
+    # Construct reverse prefix sort matrix
+    A = constructReversePrefixSortMatrix(X)
+    print("Reverse Prefix Sort Matrix (A):")
+    print(A)
 
-# Construct Y from X
-Y = constructYFromX(X)
-print("\nY constructed from X:")
-print(Y)
+    # Construct Y from X
+    Y = constructYFromX(X)
+    print("\nY constructed from X:")
+    print(Y)
 
-# Construct X from Y
-X_reconstructed = constructXFromY(Y)
-print("\nX reconstructed from Y:")
-print(X_reconstructed)
+    # Construct X from Y
+    X_reconstructed = constructXFromY(Y)
+    print("\nX reconstructed from Y:")
+    print(X_reconstructed)
 
-# Construct common suffix matrix
-D = constructCommonSuffixMatrix(A, X)
-print("\nCommon Suffix Matrix (D):")
-print(D)
+    # Construct common suffix matrix
+    D = constructCommonSuffixMatrix(A, X)
+    print("\nCommon Suffix Matrix (D):")
+    print(D)
 
-# Get long matches
-min_length = 1
-long_matches = list(getLongMatches(X_reconstructed, min_length))
-print("\nLong Matches (x, y, j):")
-print(long_matches)
+    # Get long matches
+    min_length = 1
+    long_matches = list(getLongMatches(X_reconstructed, min_length))
+    print("\nLong Matches (x, y, j):")
+    print(long_matches)
 
+if __name__ == '__main__':
+    main()
+    
